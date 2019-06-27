@@ -18,7 +18,6 @@ public class ColorGrid extends JPanel {
       for (int row = 0; row < myLabels.length; row++) {
          for (int col = 0; col < myLabels[row].length - 1; col++) {
             JLabel myLabel = new JLabel();
-            myLabel = new JLabel();
             myLabel.setOpaque(true);
             myLabel.setBorder(BorderFactory.createLineBorder(Color.WHITE, 1, true));
             MyColor myColor = MyColor.LIGHT_GRAY;
@@ -40,9 +39,8 @@ public class ColorGrid extends JPanel {
       for (int row = 0; row < myLabels.length; row++) {
          for (int col = 0; col < myLabels[row].length; col++) {
             if (label == myLabels[row][col]) {
-               MyColor myColor = myColors[row][col].next();
-               myColors[row][col] = myColor;
-               myLabels[row][col].setBackground(myColor.getColor());
+               myColors[row][col] = Toolbox.mycolor;
+               myLabels[row][col].setBackground(Toolbox.mycolor.getColor());
             }
          }
       }
