@@ -40,11 +40,14 @@ public class MyMouseListener extends MouseAdapter {
                 System.out.println(sdf.format(cal.getTime()));
                 MyColor[][] myColors = colorGrid.getMyColors();
                 PrintWriter writer = new PrintWriter("dates.txt", "UTF-8");
+                String scale = JOptionPane.showInputDialog("Enter max amount of commits in the desired period");
+                int scaleint = (int)Math.ceil((Integer.parseInt(scale) / 4.0));
+                System.out.println(scaleint);
                 for (int col = 0; col < 52; col++) {
                     for (int row = 0; row < 7; row++) {
                         if (myColors[row][col].getShortName() != 0) {
                             cal.add(Calendar.DAY_OF_MONTH, col*7 + row);
-                            writer.println(sdf.format(cal.getTime()) + "/" + myColors[row][col].getShortName());
+                            writer.println(sdf.format(cal.getTime()) + "/" + myColors[row][col].getShortName() * scaleint);
                             cal.setTime(calOrig.getTime());
                         }
                     }
@@ -57,6 +60,7 @@ public class MyMouseListener extends MouseAdapter {
             } catch (UnsupportedEncodingException ex) {
                 Logger.getLogger(MyMouseListener.class.getName()).log(Level.SEVERE, null, ex);
             }
+            catch (NullPointerException x) {}
 
         }
     }
