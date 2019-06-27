@@ -1,18 +1,18 @@
 # GitHub Graffiti Creator
 
-## Inspiration
-So, there is a friend of mine and she had her birthday. I noticed that she has not created a github user account yet, so I went ahead to create one for her. And wrote this application, to design and create a special birthday message for her. 
+Forked from 
+`https://github.com/mavrk/github-graffiti`
 
-![The birthday message](https://github.com/mavrk/github-graffiti/blob/master/images/demo.png "The birthday message")
+Hoping to resolve the issues highlighted in the issues section. :)
 
-### What do you need ?
+### What do you need?
 1. Java runtime environment (https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
 2. A bash terminal (https://gitforwindows.org/ will work like a charm for Windows users)
 
-### How to get started ?
+### How to get started?
 
 **Step-1** Clone this repository
-`git clone https://github.com/mavrk/github-graffiti`
+`git clone https://github.com/louismousine/github-graffiti`
 
 **Step-2** Open the GUI editor
 ```
