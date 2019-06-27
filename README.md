@@ -3,7 +3,8 @@
 Forked from 
 `https://github.com/mavrk/github-graffiti`
 
-Hoping to resolve the issues highlighted in the issues section. :)
+Hoping to resolve the issues highlighted in the issues section. (Make templates serializable, take into account max contributions, add copy-paste).
+Additions from original repository: added a toolbox to select colors to allow for faster drawing. :) One was previously required to click up to 4 times per square to add a color.
 
 ### What do you need?
 1. Java runtime environment (https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
