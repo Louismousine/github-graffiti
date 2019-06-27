@@ -42,6 +42,7 @@ public class MyMouseListener extends MouseAdapter {
                 String scale = JOptionPane.showInputDialog("Enter max amount of commits in the desired period");
                 int scaleint = (int)Math.ceil((Integer.parseInt(scale) / 4.0));
                 if (scaleint ==0) scaleint=1;
+                if (scaleint > 15) scaleint=15;
                 for (int col = 0; col < 52; col++) {
                     for (int row = 0; row < 7; row++) {
                         if (myColors[row][col].getShortName() != 0) {
