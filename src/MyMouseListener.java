@@ -32,17 +32,16 @@ public class MyMouseListener extends MouseAdapter {
                 Date inputDate = sdf.parse(inputDateString);
                 Calendar cal = Calendar.getInstance(), calOrig = Calendar.getInstance();
                 cal.setTime(inputDate);
-                cal.set(Calendar.YEAR, cal.get(Calendar.YEAR) - 1);
+                cal.set(Calendar.YEAR, cal.get(Calendar.YEAR));
                 while (cal.get(Calendar.DAY_OF_WEEK) != Calendar.SUNDAY) {
                     cal.set(Calendar.DAY_OF_MONTH, cal.get(Calendar.DAY_OF_MONTH) - 1);
                 }
                 calOrig.setTime(cal.getTime());
-                System.out.println(sdf.format(cal.getTime()));
                 MyColor[][] myColors = colorGrid.getMyColors();
                 PrintWriter writer = new PrintWriter("dates.txt", "UTF-8");
                 String scale = JOptionPane.showInputDialog("Enter max amount of commits in the desired period");
                 int scaleint = (int)Math.ceil((Integer.parseInt(scale) / 4.0));
-                System.out.println(scaleint);
+                if (scaleint ==0) scaleint=1;
                 for (int col = 0; col < 52; col++) {
                     for (int row = 0; row < 7; row++) {
                         if (myColors[row][col].getShortName() != 0) {
@@ -60,7 +59,7 @@ public class MyMouseListener extends MouseAdapter {
             } catch (UnsupportedEncodingException ex) {
                 Logger.getLogger(MyMouseListener.class.getName()).log(Level.SEVERE, null, ex);
             }
-            catch (NullPointerException x) {}
+            catch (Exception x) {}
 
         }
     }
